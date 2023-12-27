@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-bind font-size</title>
+    <style>
+        #app > div {
+            width: 200px;
+            padding: 20px;
+            background: lightcoral;
+            border: dashed yellow 1px;
+        }
+    </style>
+</head>
+<body>
+    <h1>'v-bind' Font Size Example</h1>
+
+    <p>The browser sets the font-size based on the value of 'size' in the Vue instance.</p>
+
+    <div id="app">
+        <div v-bind:style="{ fontSize: size }">Text Example</div>
+    </div>
+
+    <script src="vue3.min.js"></script>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    size: '28px'
+                }
+            },
+        })
+
+        app.mount('#app')
+    </script>
+</body>
+</html>
