@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Pink BG</title>
+    <style>
+        div {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #000;
+        }
+        .pinkBG {
+            background: lightpink;
+        }
+    </style>
+</head>
+<body>
+    <h1>v-bind' Example</h1>
+
+    <p>The browser finds the class name inside the Vue instance.</p>
+
+    <div id="app">
+        <p>Everything inside the div emelent with id="app" can use data from the Vue instance.</p>
+        <div v-bind:class="vueClass">
+            This element is bound to the "pinkBG" class.
+        </div>
+    </div>
+
+    <script src="./vue3.min.js"></script>
+
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    vueClass: "pinkBG"
+                }
+            }
+        });
+
+        app.mount('#app');
+    </script>
+</body>
+</html>
