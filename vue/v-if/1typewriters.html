@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typewriters</title>
+    <style>
+       #app {
+        padding-left: 20px;
+        width: 130px;
+        background: lightgreen;
+        font-weight: bold;
+        border: dashed black 1px;
+       }
+    </style>
+</head>
+
+<body>
+    <h1>Example with 'v-if' and 'v-else'</h1>
+
+    <p>
+        Try changing the 'typewritersInStock' value in the Vue instance from 'true' to 'false' and run the code again.
+    </p>
+
+    <div id="app">
+        <p v-if="typewritersInStock">In Stock</p>
+        <p v-else>Not In Stock</p>
+    </div>
+
+    <script src="../vue3.min.js"></script>
+
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    typewritersInStock: true
+                }
+            },
+        })
+        app.mount('#app')
+    </script>
+</body>
+
+</html>
