@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-bind background-color</title>
+    <style>
+        #app>div {
+            width: 200px;
+            padding: 20px;            
+            border: dashed black 1px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Example: 'v-bind' with Conditional Background Color</h1>
+
+    <p>The browser sets the background color with 'hsl()' based on the value of 'bgVal' in the Vue instance.</p>
+
+    <div id="app">
+        <div v-bind:style="{ backgroundColor: isImportant ? 'blue' : 'green'
+        }">
+            Importance based on background color
+        </div>
+    </div>
+
+    <script src="vue3.min.js"></script>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    isImportant: true
+                }
+            },
+        })
+
+        app.mount('#app')
+    </script>
+</body>
+
+</html>
