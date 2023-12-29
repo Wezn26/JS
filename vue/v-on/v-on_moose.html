@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count Moose</title>
+    <style>
+        #app {
+            width: 200px;
+            padding: 20px;
+            border: 1px dashed #000;
+        }
+
+        b {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Example: Count Moose</h1>
+
+    <div id="app">
+        <b>MOOSE</b>
+        <p> {{ "Moose count: " + count}} </p>
+        <button v-on:click="count++">Count Moose</button>
+    </div>
+
+    <script src="../vue3.min.js"></script>
+
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    count: 0
+                }
+            },
+        })
+        app.mount('#app')
+    </script>
+</body>
+</html>
