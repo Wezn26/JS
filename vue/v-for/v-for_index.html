@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index with 'v-for'</title>
+    <style>
+        #app>div {
+            display: inline-block;
+            padding: 10px;
+            background-color: lightgreen;
+        }
+
+        #app p {
+            margin: 5px 0;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Example: Get the array element index with 'v-for'</h1>
+    <p>The 'v-for' directive is used to get the index of objects inside the 'manyFoods' array, together with the name
+        and url of each food object.</p>
+    
+    <div id="app">
+        <div>
+            <p v-for="(x, index) in manyFoods">
+                {{ index }}: "{{ x.name }}", url: "{{ x.url }}" <br>
+            </p>
+        </div>
+    </div>
+
+    <script src="../vue3.min.js"></script>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    manyFoods: [
+                        {name: 'Burito', url: 'burito.img'},
+                        {name: 'Salad', url: 'salad.img'},
+                        {name: 'Cake', url: 'cake.img'},
+                        {name: 'Soup', url: 'soup.img'},
+                        {name: 'Fish', url: 'fish.img'},
+                        {name: 'Pizza', url: 'pizza.img'},
+                        {name: 'Rice', url: 'rice.img'}
+                    ]
+                }
+            },
+        })
+        app.mount('#app')
+    </script>
+</body>
+
+</html>
