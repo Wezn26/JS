@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Pointer Position</title>
+    <style>
+        #app {
+            width: 200px;
+            padding: 0 20px 20px 20px;
+            border: 1px dashed #000;
+        }
+    </style>
+</head>
+<body>
+    <h1>Example: Create Alert Only Once</h1>
+    <div id="app">
+        <p>The button below creates an alert in a pop-up box, but only on the first click:</p>
+        <button v-on:click.once="createAlert">Create Alert</button>
+    </div>
+    <script src="../vue3.min.js"></script>
+    <script>
+        const app = Vue.createApp({
+            methods: {
+                createAlert() {
+                    alert("Alert created from button click")
+                }
+            },
+        })
+        app.mount('#app')
+    </script>
+</body>
+</html>
