@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Pointer Position</title>
+    <style>
+        #app {
+            width: 200px;
+            padding: 0 20px 20px 20px;
+            border: 1px dashed #000;
+        }
+        #green {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Example: Find The Keyboard Key Value</h1>
+    <div id="app">
+        <p>
+            Start writing inside the text box to record the key value:
+        </p>
+        <input type="text" v-on:keydown="getKey">
+        <p id="green"> {{ keyValue }} </p>
+    </div>
+    <script src="../vue3.min.js"></script>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    keyValue: ''
+                }
+            },
+            methods: {
+                getKey(evt) {
+                    this.keyValue = evt.key
+                    console.log(evt.key);
+                }
+            },
+        })
+        app.mount('#app')
+    </script>
+</body>
+
+</html>
