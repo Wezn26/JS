@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Important Checkbox</title>
+    <style>
+        form {
+            display: inline-block;
+            padding: 10px;
+            border: 1px dashed #000;
+        }
+
+        label {
+            padding: 5px;
+        }
+
+        label:hover {
+            background-color: lightgrey;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Example: Important Checkbox</h1>
+    <p>This 'important' checkbox is a dynamic form feature that will be added to a shoppinglist form later, but we
+        isolate it here first to easier see how it works.</p>
+    <div id="app">
+        <form action="">
+            <p>
+                Is important item?
+                <label>
+                    <input type="checkbox" v-model="important">
+                    {{ important }}
+                </label>
+            </p>
+        </form>
+    </div>
+    <script src="../vue3.min.js"></script>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    important: false
+                }
+            },
+        })
+        app.mount('#app')
+    </script>
+</body>
+
+</html>
