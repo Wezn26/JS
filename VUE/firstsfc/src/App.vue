@@ -3,9 +3,11 @@
 <template>
   <h1>Food</h1>
   <p>Food items are generated with v-for from the 'foods' array.</p>
+  <button v-on:click="removeItem">Remove Item</button>
   <div id="wrapper">
     <food-item 
         v-for="x in foods"
+        v-bind:key="x.name"
         v-bind:food-name="x.name"
         v-bind:food-desc="x.desc"
         v-bind:isFavorite="x.favorite"/>
@@ -43,6 +45,11 @@
             favorite: false
           },
         ]
+      }
+    },
+    methods: {
+      removeItem() {
+        this.foods.splice(1,1);
       }
     },
   }
