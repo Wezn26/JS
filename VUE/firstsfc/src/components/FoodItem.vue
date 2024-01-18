@@ -3,7 +3,7 @@
         <h2>
             {{ foodName }}
             <img src="./../../public/img/img_quality.svg" 
-            alt="img" v-show="foodIsFavorite">
+            alt="img" v-show="isFavorite">
         </h2>
         <p>{{ foodDesc }}</p>
         <button v-on:click="toggleFavorite">Favorite</button>        
@@ -13,14 +13,16 @@
 <script>
     export default {
         props: ['foodName', 'foodDesc', 'isFavorite'],
-        data() {
-            return {
-                foodIsFavorite: this.isFavorite
-            }
-        },
+        emits: ['toggle-favorite'],
+        // data() {
+        //     return {
+        //         foodIsFavorite: this.isFavorite
+        //     }
+        // },
         methods: {
             toggleFavorite() {
-                this.foodIsFavorite = !this.foodIsFavorite
+                //this.foodIsFavorite = !this.foodIsFavorite
+                this.$emit('toggle-Favorite', this.foodName);
             }
         },        
         // props: {

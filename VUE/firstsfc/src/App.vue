@@ -10,7 +10,8 @@
         v-bind:key="x.name"
         v-bind:food-name="x.name"
         v-bind:food-desc="x.desc"
-        v-bind:isFavorite="x.favorite"/>
+        v-bind:isFavorite="x.favorite"
+        v-on:toggle-Favorite="receiveEmit"/>
   </div>  
 </template>
 
@@ -50,6 +51,13 @@
     methods: {
       removeItem() {
         this.foods.splice(1,1);
+      },
+      receiveEmit(foodId) {
+        const foundFood = this.foods.find(
+          food => food.name === foodId
+        );
+        foundFood.favorite = !foundFood.favorite
+         //alert('You clicked: ' + foodId);
       }
     },
   }
